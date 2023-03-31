@@ -1,0 +1,3 @@
+../Core/Src/keyboard.c:3:19:keyboard_Init	16	static
+../Core/Src/keyboard.c:17:19:keyboard_CheckButton	24	static
+../Core/Src/keyboard.c:55:19:keyboard_WaitButton	24	static
