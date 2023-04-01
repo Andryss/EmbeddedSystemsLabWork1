@@ -23,11 +23,14 @@ HAL_StatusTypeDef keyboard_CheckButton(BUTTON_t* btn){
 	for (uint8_t i = 0; i < 4; i++) { // row
 		uint8_t conf = ~(0x01 << i);
 
-		status = PCA9538_Write_Register(KEYBOARD_I2C_ADDR, CONFIG, &conf);
+		status = PCA9538_Write_Register(KEYBOARD_I2C_ADDR, OUTPUT_PORT, &conf);
 		if (status != HAL_OK) {
 			UART_Transmit("Can't write keyboard config register\n");
 			return status;
 		}
+		
+		HAL_Delay(10);
+		
 		status = PCA9538_Read_Inputs(KEYBOARD_I2C_ADDR, &input_port);
 		if (status != HAL_OK) {
 			UART_Transmit("Can't read keyboard input port\n");
