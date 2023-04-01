@@ -35,7 +35,7 @@ HAL_StatusTypeDef PCA9538_Write_Register(uint16_t addr, pca9538_regs_t reg, uint
 
 static uint8_t OUTPUT_PORT_DEFAULT = 0xFF;
 static uint8_t POLARITY_INVERSION_DEFAULT = 0x00;
-static uint8_t CONFIG_DEFAULT = 0xFF;
+static uint8_t CONFIG_DEFAULT = 0xF0;
 
 HAL_StatusTypeDef PCA9538_SetDefaultConfig(uint16_t addr) {
 	HAL_StatusTypeDef status;
